@@ -8,10 +8,8 @@ const ingredients = [
 ];
 
 const ulIngredients = document.getElementById("ingredients");
+const ingredientsList = ingredients
+  .map((ingredient) => `<li>${ingredient}</li>`)
+  .join("");
 
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ulIngredients.appendChild(li);
-});
+ulIngredients.insertAdjacentHTML("beforeend", ingredientsList);
